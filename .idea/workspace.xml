@@ -5,18 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ca71feef-8f9e-4750-b3b7-200d17b625f4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A2HuyNT_SE1910_BE/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/A2HuyNT_SE1910_BE/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A2HuyNT_SE1910_BE/src/main/java/com/fpt/entity/NewsArticle.java" beforeDir="false" afterPath="$PROJECT_DIR$/A2HuyNT_SE1910_BE/src/main/java/com/fpt/entity/NewsArticle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A2HuyNT_SE1910_BE/src/main/java/com/fpt/entity/SystemAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/A2HuyNT_SE1910_BE/src/main/java/com/fpt/entity/SystemAccount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A2HuyNT_SE1910_BE/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/A2HuyNT_SE1910_BE/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A2HuyNT_SE1910_FE/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/A2HuyNT_SE1910_FE/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A2HuyNT_SE1910_FE/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/A2HuyNT_SE1910_FE/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A2HuyNT_SE1910_FE/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/A2HuyNT_SE1910_FE/src/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A2HuyNT_SE1910_FE/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/A2HuyNT_SE1910_FE/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A2HuyNT_SE1910_FE/src/main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/A2HuyNT_SE1910_FE/src/main.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/A2HuyNT_SE1910_BE/src/main/java/com/fpt/dto/CategoryResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/A2HuyNT_SE1910_BE/src/main/java/com/fpt/dto/CategoryResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/A2HuyNT_SE1910_FE/src/components/StaffCategories.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/A2HuyNT_SE1910_FE/src/components/StaffCategories.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,7 +98,7 @@
       <workItem from="1793327357523" duration="6974000" />
       <workItem from="1793340046056" duration="1626000" />
       <workItem from="1793345883345" duration="950000" />
-      <workItem from="1793362906478" duration="754000" />
+      <workItem from="1793362906478" duration="4558000" />
     </task>
     <servers />
   </component>
