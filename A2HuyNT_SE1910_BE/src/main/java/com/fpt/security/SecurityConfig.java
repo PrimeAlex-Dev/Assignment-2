@@ -77,6 +77,7 @@ public class SecurityConfig {
 
                         // Khách vãng lai xem tin tức active không cần đăng nhập
                         .requestMatchers(HttpMethod.GET, "/api/news-articles/**").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/api/tags/**").permitAll()
 
                         // Cho phép preflight request của trình duyệt (OPTIONS)
                         .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
