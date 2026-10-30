@@ -1,122 +1,97 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import './App.css'
+import React, { useState, useEffect } from 'react';
+import Header from './components/Header';
+import Login from './components/Login';
+import AccountManagement from './components/AccountManagement';
+import StaffArticles from './components/StaffArticles';
+import StaffCategories from './components/StaffCategories';
+import StaffProfile from './components/StaffProfile';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [user, setUser] = useState(() => {
+    const savedUser = localStorage.getItem('user');
+    return savedUser ? JSON.parse(savedUser) : null;
+  });
+
+  // State cho Tab đang kích hoạt
+  const [activeTab, setActiveTab] = useState('accounts');
+
+  // Khi user thay đổi role, tự động chọn tab đầu tiên hợp lệ của role đó
+  useEffect(() => {
+    if (user) {
+      if (user.accountRole === 1) {
+        setActiveTab('accounts'); // Admin chỉ có tab Quản lý tài khoản
+      } else {
+        setActiveTab('articles'); // Staff vào thẳng tab Quản lý bài viết
+      }
+    }
+  }, [user]);
+
+  // Nếu chưa đăng nhập -> hiển thị màn hình Login
+  if (!user) {
+    return <Login onLoginSuccess={setUser} />;
+  }
 
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
+    <div className="min-vh-100 bg-light">
+      {/* 1. Header trên cùng */}
+      <Header user={user} onLogout={() => setUser(null)} />
 
-      <div className="ticks"></div>
+      {/* 2. Container chính */}
+      <div className="container pb-5">
+        {/* Navigation Tabs phân quyền theo Role */}
+        <ul className="nav nav-tabs mb-4 bg-white p-2 rounded shadow-sm">
+          {/* TAB DÀNH CHO ADMIN (Role = 1) */}
+          {user.accountRole === 1 && (
+            <li className="nav-item">
+              <button
+                className={`nav-link fw-semibold ${activeTab === 'accounts' ? 'active' : ''}`}
+                onClick={() => setActiveTab('accounts')}
+              >
+                👥 Quản lý Tài khoản (Admin)
+              </button>
+            </li>
+          )}
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
+          {/* CÁC TAB DÀNH CHO STAFF (Role = 2) */}
+          {user.accountRole === 2 && (
+            <>
+              <li className="nav-item">
+                <button
+                  className={`nav-link fw-semibold ${activeTab === 'articles' ? 'active' : ''}`}
+                  onClick={() => setActiveTab('articles')}
                 >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
+                  📰 Quản lý Bài viết
+                </button>
+              </li>
+              <li className="nav-item">
+                <button
+                  className={`nav-link fw-semibold ${activeTab === 'categories' ? 'active' : ''}`}
+                  onClick={() => setActiveTab('categories')}
                 >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
+                  📂 Quản lý Danh mục
+                </button>
+              </li>
+              <li className="nav-item">
+                <button
+                  className={`nav-link fw-semibold ${activeTab === 'profile' ? 'active' : ''}`}
+                  onClick={() => setActiveTab('profile')}
                 >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
+                  👤 Thông tin cá nhân
+                </button>
+              </li>
+            </>
+          )}
+        </ul>
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
-  )
+        {/* 3. Nội dung Component hiển thị theo Tab đã chọn */}
+        {user.accountRole === 1 && activeTab === 'accounts' && <AccountManagement />}
+
+        {user.accountRole === 2 && activeTab === 'articles' && <StaffArticles />}
+        {user.accountRole === 2 && activeTab === 'categories' && <StaffCategories />}
+        {user.accountRole === 2 && activeTab === 'profile' && <StaffProfile user={user} />}
+      </div>
+    </div>
+  );
 }
 
-export default App
+export default App;

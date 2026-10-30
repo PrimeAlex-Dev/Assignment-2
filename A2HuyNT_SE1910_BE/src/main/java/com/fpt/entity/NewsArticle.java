@@ -17,8 +17,8 @@ public class NewsArticle {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "NewsArticleID", length = 20)
-    private String newsArticleId;
+    @Column(name = "NewsArticleID")
+    private Short newsArticleId;
 
     @Column(name = "NewsTitle", length = 170)
     private String newsTitle;

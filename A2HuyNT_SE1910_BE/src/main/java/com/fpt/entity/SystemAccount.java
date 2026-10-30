@@ -12,6 +12,7 @@ import lombok.*;
 public class SystemAccount {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "AccountID")
     private Short accountId;
 
