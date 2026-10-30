@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import api from '../services/api';
 
-export default function Login({ onLoginSuccess }) {
+export default function Login({ onLoginSuccess, onNavigateToPublic }) {
   const [accountEmail, setAccountEmail] = useState('');
   const [accountPassword, setAccountPassword] = useState('');
   const [loading, setLoading] = useState(false);
@@ -45,7 +45,17 @@ export default function Login({ onLoginSuccess }) {
         <div className="col-md-5 col-lg-4">
           <div className="card shadow-sm border-0">
             <div className="card-body p-4">
-              <h3 className="card-title text-center mb-3 text-primary fw-bold">
+              <div className="d-flex justify-content-between align-items-center mb-3">
+                <button
+                  type="button"
+                  className="btn btn-link btn-sm text-decoration-none p-0"
+                  onClick={onNavigateToPublic}
+                >
+                  ← Trang tin tức
+                </button>
+              </div>
+
+              <h3 className="card-title text-center mb-1 text-primary fw-bold">
                 FUNews System
               </h3>
               <p className="text-center text-muted small mb-4">
@@ -93,7 +103,7 @@ export default function Login({ onLoginSuccess }) {
               </form>
 
               <div className="text-center mt-3 text-muted small">
-                Tài khoản mặc định: <b>admin@fpt.edu.vn</b> / <b>123456</b>
+                Tài khoản mẫu: <b>admin@fpt.edu.vn</b> hoặc <b>staff@fpt.edu.vn</b> / <b>123456</b>
               </div>
             </div>
           </div>

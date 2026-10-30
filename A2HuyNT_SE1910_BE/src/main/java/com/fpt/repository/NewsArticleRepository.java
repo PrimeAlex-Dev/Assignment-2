@@ -7,12 +7,12 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface NewsArticleRepository extends JpaRepository<NewsArticle, String> {
+public interface NewsArticleRepository extends JpaRepository<NewsArticle, Short> {
 
-
+    // Khách vãng lai: Chỉ xem danh sách tin tức active (NewsStatus = 1)
     List<NewsArticle> findByNewsStatus(Integer newsStatus);
 
-
+    // Tìm kiếm tin tức theo tiêu đề
     List<NewsArticle> findByNewsTitleContainingIgnoreCase(String keyword);
 
     // Tìm kiếm tin tức active theo tiêu đề (cho trang chủ public)

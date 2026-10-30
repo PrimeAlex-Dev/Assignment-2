@@ -75,9 +75,11 @@ public class SecurityConfig {
                         // Cho phép truy cập tự do vào API auth (login, logout)
                         .requestMatchers("/api/auth/**").permitAll()
 
-                        // Khách vãng lai xem tin tức active không cần đăng nhập
-                        .requestMatchers(HttpMethod.GET, "/api/news-articles/**").permitAll()
+                        // Khách vãng lai xem tin tức active và chi tiết bài viết không cần đăng nhập
+                        .requestMatchers(HttpMethod.GET, "/api/news-articles/public").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/api/news-articles/{id}").permitAll()
                         .requestMatchers(HttpMethod.GET, "/api/tags/**").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/api/categories/active").permitAll()
 
                         // Cho phép preflight request của trình duyệt (OPTIONS)
                         .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
@@ -85,12 +87,14 @@ public class SecurityConfig {
                         // Quyền ADMIN: Quản lý tài khoản
                         .requestMatchers("/api/accounts/**").hasRole("ADMIN")
 
-                        // Quyền STAFF: Quản lý Category & viết bài
+                        // Quyền STAFF / ADMIN: Quản lý Category, Tag & Viết bài
                         .requestMatchers("/api/categories/**").hasAnyRole("ADMIN", "STAFF")
                         .requestMatchers("/api/tags/**").hasAnyRole("ADMIN", "STAFF")
-                        .requestMatchers(HttpMethod.POST, "/api/news-articles/**").hasRole("STAFF")
-                        .requestMatchers(HttpMethod.PUT, "/api/news-articles/**").hasRole("STAFF")
-                        .requestMatchers(HttpMethod.DELETE, "/api/news-articles/**").hasRole("STAFF")
+                        .requestMatchers(HttpMethod.GET, "/api/news-articles/my-history").hasAnyRole("ADMIN", "STAFF")
+                        .requestMatchers(HttpMethod.GET, "/api/news-articles").hasAnyRole("ADMIN", "STAFF")
+                        .requestMatchers(HttpMethod.POST, "/api/news-articles/**").hasAnyRole("ADMIN", "STAFF")
+                        .requestMatchers(HttpMethod.PUT, "/api/news-articles/**").hasAnyRole("ADMIN", "STAFF")
+                        .requestMatchers(HttpMethod.DELETE, "/api/news-articles/**").hasAnyRole("ADMIN", "STAFF")
 
                         // Tất cả các request khác phải đăng nhập
                         .anyRequest().authenticated()

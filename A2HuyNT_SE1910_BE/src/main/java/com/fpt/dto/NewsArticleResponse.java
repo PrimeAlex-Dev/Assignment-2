@@ -9,9 +9,10 @@ import java.util.Set;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class NewsArticleResponse {
 
-    private String newsArticleId;
+    private Short newsArticleId;
     private String newsTitle;
     private String headline;
     private LocalDateTime createdDate;

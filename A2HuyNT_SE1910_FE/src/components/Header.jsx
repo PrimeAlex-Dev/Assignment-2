@@ -1,7 +1,7 @@
 import React from 'react';
 import api from '../services/api';
 
-export default function Header({ user, onLogout }) {
+export default function Header({ user, onLogout, onNavigateToPublic }) {
   const handleLogout = async () => {
     try {
       await api.post('/auth/logout');
@@ -20,11 +20,20 @@ export default function Header({ user, onLogout }) {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark px-3 shadow-sm mb-4">
       <div className="container-fluid">
-        <span className="navbar-brand fw-bold text-white">
+        <span className="navbar-brand fw-bold text-white d-flex align-items-center gap-2">
           📰 FUNews Management System
         </span>
 
         <div className="d-flex align-items-center gap-3">
+          {/* Nút xem nhanh trang tin tức công khai */}
+          <button
+            onClick={onNavigateToPublic}
+            className="btn btn-outline-info btn-sm text-white"
+            title="Xem trang tin tức công khai của khách vãng lai"
+          >
+            🌐 Xem trang tin tức
+          </button>
+
           <span className="text-light small">
             Xin chào: <strong>{user?.accountName}</strong>{' '}
             <span className={`badge ${badgeClass} ms-1`}>{roleName}</span>
@@ -32,7 +41,7 @@ export default function Header({ user, onLogout }) {
 
           <button
             onClick={handleLogout}
-            className="btn btn-outline-light btn-sm"
+            className="btn btn-outline-danger btn-sm"
             title="Đăng xuất khỏi hệ thống"
           >
             Đăng xuất
