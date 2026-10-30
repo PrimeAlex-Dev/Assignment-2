@@ -16,6 +16,7 @@ import java.util.Set;
 public class NewsArticle {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "NewsArticleID", length = 20)
     private String newsArticleId;
 
