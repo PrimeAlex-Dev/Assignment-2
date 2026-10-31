@@ -2,6 +2,7 @@ package com.fpt.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.Nationalized;
 
 import java.time.LocalDateTime;
 import java.util.HashSet;
@@ -20,18 +21,22 @@ public class NewsArticle {
     @Column(name = "NewsArticleID")
     private Short newsArticleId;
 
+    @Nationalized
     @Column(name = "NewsTitle", length = 170)
     private String newsTitle;
 
+    @Nationalized
     @Column(name = "Headline", length = 150)
     private String headline;
 
     @Column(name = "CreatedDate")
     private LocalDateTime createdDate;
 
+    @Nationalized
     @Column(name = "NewsContent", columnDefinition = "NVARCHAR(MAX)")
     private String newsContent;
 
+    @Nationalized
     @Column(name = "NewsSource", length = 400)
     private String newsSource;
 

@@ -2,6 +2,7 @@ package com.fpt.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.Nationalized;
 
 @Entity
 @Table(name = "Tag")
@@ -16,9 +17,11 @@ public class Tag {
     @Column(name = "TagID")
     private Integer tagId;
 
+    @Nationalized
     @Column(name = "TagName", nullable = false, length = 50)
     private String tagName;
 
+    @Nationalized
     @Column(name = "Note", length = 400)
     private String note;
 }

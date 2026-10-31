@@ -2,6 +2,7 @@ package com.fpt.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.Nationalized;
 
 @Entity
 @Table(name = "SystemAccount")
@@ -16,6 +17,7 @@ public class SystemAccount {
     @Column(name = "AccountID")
     private Short accountId;
 
+    @Nationalized
     @Column(name = "AccountName", length = 100)
     private String accountName;
 

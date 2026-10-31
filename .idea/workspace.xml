@@ -6,13 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="ca71feef-8f9e-4750-b3b7-200d17b625f4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A2HuyNT_SE1910_BE/src/main/java/com/fpt/dto/NewsArticleResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/A2HuyNT_SE1910_BE/src/main/java/com/fpt/dto/NewsArticleResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A2HuyNT_SE1910_BE/src/main/java/com/fpt/repository/NewsArticleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/A2HuyNT_SE1910_BE/src/main/java/com/fpt/repository/NewsArticleRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A2HuyNT_SE1910_BE/src/main/java/com/fpt/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/A2HuyNT_SE1910_BE/src/main/java/com/fpt/security/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A2HuyNT_SE1910_FE/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/A2HuyNT_SE1910_FE/src/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A2HuyNT_SE1910_FE/src/components/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/A2HuyNT_SE1910_FE/src/components/Header.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A2HuyNT_SE1910_FE/src/components/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/A2HuyNT_SE1910_FE/src/components/Login.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A2HuyNT_SE1910_FE/src/components/StaffArticles.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/A2HuyNT_SE1910_FE/src/components/StaffArticles.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/A2HuyNT_SE1910_BE/src/main/java/com/fpt/entity/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/A2HuyNT_SE1910_BE/src/main/java/com/fpt/entity/Category.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/A2HuyNT_SE1910_BE/src/main/java/com/fpt/entity/NewsArticle.java" beforeDir="false" afterPath="$PROJECT_DIR$/A2HuyNT_SE1910_BE/src/main/java/com/fpt/entity/NewsArticle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/A2HuyNT_SE1910_BE/src/main/java/com/fpt/entity/SystemAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/A2HuyNT_SE1910_BE/src/main/java/com/fpt/entity/SystemAccount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/A2HuyNT_SE1910_BE/src/main/java/com/fpt/entity/Tag.java" beforeDir="false" afterPath="$PROJECT_DIR$/A2HuyNT_SE1910_BE/src/main/java/com/fpt/entity/Tag.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/A2HuyNT_SE1910_BE/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/A2HuyNT_SE1910_BE/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,7 +102,8 @@
       <workItem from="1793340046056" duration="1626000" />
       <workItem from="1793345883345" duration="950000" />
       <workItem from="1793362906478" duration="8723000" />
-      <workItem from="1793372288213" duration="324000" />
+      <workItem from="1793372288213" duration="631000" />
+      <workItem from="1793373345003" duration="400000" />
     </task>
     <servers />
   </component>
